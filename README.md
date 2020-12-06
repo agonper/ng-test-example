@@ -15,8 +15,8 @@ Este es un repositorio de ejemplo en el que se muestra cómo implementar pruebas
 
 ### Pruebas de aceptación
 - [HU01](./src/aceptacion/hu01.spec.ts): Listar habitaciones
-- [HU02](./src/aceptacion/hu01.spec.ts): Crear habitaciones
-- [HU03](./src/aceptacion/hu01.spec.ts): Escuchar cambios habitaciones
+- [HU02](./src/aceptacion/hu02.spec.ts): Crear habitaciones
+- [HU03](./src/aceptacion/hu03.spec.ts): Escuchar cambios habitaciones
 
 > **Nota**: Los números de historias y la funcionalidad que abarcan son totalmente arbitrarios y podrían no corresponderse con la funcionalidad final a implementar.
 
