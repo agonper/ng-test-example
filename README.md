@@ -1,27 +1,26 @@
-# NgTestExample
+# Pruebas de aceptación en Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+Este es un repositorio de ejemplo en el que se muestra cómo implementar pruebas de aceptación en Angular contra la lógica de negocio (servicio) de gestión de habitaciones.
 
-## Development server
+## Componentes clave
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Entidades
+- [Habitacion](./src/app/habitaciones/habitacion.ts): Interfaz que representa los atributos básicos de una habitación
 
-## Code scaffolding
+### Excepciones / Errores
+- [HabitacionExistente](./src/app/habitaciones/errores/habitacion-existente.ts): Error que debe mostrarse cuando se intenta crear una habitación que ya existe
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Equeletos de modelos (Servicios)
+- [HabitacionesService](./src/app/habitaciones/habitaciones.service.ts): Nuestro sistema a probar, se inyectará en el controlador (componente) de la vista para su uso desde la interfaz gráfica
 
-## Build
+### Pruebas de aceptación
+- [HU01](./src/aceptacion/hu01.spec.ts): Listar habitaciones
+- [HU02](./src/aceptacion/hu01.spec.ts): Crear habitaciones
+- [HU03](./src/aceptacion/hu01.spec.ts): Escuchar cambios habitaciones
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+> **Nota**: Los números de historias y la funcionalidad que abarcan son totalmente arbitrarios y podrían no corresponderse con la funcionalidad final a implementar.
 
-## Running unit tests
+## Documentación adicional
+- [Probando servicios en angular](https://angular.io/guide/testing-services): Cómo realizar pruebas unitarias y de intergración sobre servicios implementados en Angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> **Nota**: El enlace anterior incluye información sobre cómo realizar pruebas de integración contra servicios empleando mocks. Este tipo de pruebas deben implementarse más adelante y por lo tanto no forman parte de la segunda entrega, 
