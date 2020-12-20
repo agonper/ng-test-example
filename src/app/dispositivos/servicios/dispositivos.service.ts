@@ -16,8 +16,8 @@ export class DispositivosService implements ServicioDispositivos {
 
   constructor() {
     let veces = 0;
-    setInterval(() => {
-      this.estados.next(crearCambios(veces % 4));
+    setInterval(() => { // Simulamos un cambio de estado cada segundo
+      this.estados.next(crearCambios(veces % 4)); // 4 estados posibles, irán rotando
       veces++;
     }, 1000);
   }

@@ -13,7 +13,9 @@ describe('AlarmasService', () => {
 
 
   beforeEach(() => {
+    // Creamos el mock
     [dispositivos, topicoEstados] = crearMockServicioDispositivos();
+    // Configuramos el módulo de pruebas para que inyecte el mock en vez de la implementación de la interfaz
     TestBed.configureTestingModule({providers: [{provide: SERVICIO_DISPOSITIVOS, useValue: dispositivos}]});
     alarmas = TestBed.inject(AlarmasService);
   });

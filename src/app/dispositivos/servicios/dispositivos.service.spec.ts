@@ -11,8 +11,10 @@ describe('DispositivosService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     dispositivos = TestBed.inject(DispositivosService);
+
+    // Modificamos el timeout de las pruebas, ya que está previsto que tarden más de 5 segundos (valor por defecto)
     timeoutPorDefecto = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000; // 10s (en milisegundos)
   });
 
   it('debería devolver diferentes estados de los dispositivos', async () => {

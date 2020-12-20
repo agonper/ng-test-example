@@ -15,12 +15,13 @@ export class AlarmasService {
     return this.alarmas;
   }
 
+  // Utilizamos un token de inyección, ya que las interfaces en TypeScript no existen en tiempo de ejecución
   constructor(@Inject(SERVICIO_DISPOSITIVOS) private dispositivos: ServicioDispositivos) {
     this.alarmas = dispositivos.estados$.pipe(
-      map(cambios => {
-        const alarmasSonando = cambios.filter(dispositivo =>
+      map(cambios => { // Por cada cambio de estado
+        const alarmasSonando = cambios.filter(dispositivo => // Nos quedamos con las alarmas activas únicamente
           dispositivo.tipo === TipoDispositivo.ALARMA && dispositivo.estado === 'sonando');
-        return alarmasSonando.map(alarma => alarma.id);
+        return alarmasSonando.map(alarma => alarma.id); // Y de ellas, nos quedamos únicamente con su id
       })
     );
   }
