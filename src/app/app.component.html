@@ -317,6 +317,10 @@
 
 <div class="content" role="main">
 
+
+  <div *ngIf="alarmas$ | async as alarmas; else cargando">{{alarmas | json}}</div>
+  <ng-template #cargando>Cargando alarmas...</ng-template>
+
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
 
