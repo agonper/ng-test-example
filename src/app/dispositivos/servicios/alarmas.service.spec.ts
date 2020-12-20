@@ -49,6 +49,14 @@ describe('AlarmasService', () => {
       {id: 1, tipo: TipoDispositivo.ALARMA, estado: 'apagada'},
     ]);
 
+    // También podríamos hacer
+    // topicoEstados.error(new Error('Error a probar'));
+    // Para probar cómo se comporta el servicio ante un error externo (de conexión, por ejemplo).
+
+    // OJO, lanzar un error() por un subject es equivalente a un complete(), cierra el observable
+    // y no puede volver a usarse.
+    // Tened en cuenta esto a la hora de implementar vuestros observables / subjects.
+
     const cambios = await saltosDeAlarma;
     expect(cambios[0]).toEqual([]);
     expect(cambios[1]).toEqual([]);
